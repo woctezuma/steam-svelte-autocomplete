@@ -47,10 +47,10 @@
           hideArrow={true}
           placeholder={showPlacehoder ? 'Please select a game' : ''} />
 
+
+    <button on:click|preventDefault={submitHandler}>Submit</button>
+
 	</div>
-
-	<button on:click|preventDefault={submitHandler}>Submit</button>
-
 	{#if result===undefined}
 	<p></p>
 	{:else}
