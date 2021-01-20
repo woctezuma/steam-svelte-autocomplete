@@ -5,6 +5,7 @@ Auto-complete Steam game names with Svelte.
 ## Usage
 
 ```bash
+npm install
 npm run dev
 ```
 
