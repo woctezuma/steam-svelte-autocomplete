@@ -1,22 +1,22 @@
 export var gameList = [
     {
-        id: 1,
+        id: 0,
         name: "Counter-Strike"
     },
     {
-        id: 2,
+        id: 1,
         name: "Team Fortress Classic"
     },
     {
-        id: 3,
+        id: 2,
         name: "Day of Defeat"
     },
     {
-        id: 4,
+        id: 3,
         name: "Deathmatch Classic"
     },
     {
-        id: 5,
+        id: 4,
         name: "Half-Life: Opposing Force"
     },
 ];
