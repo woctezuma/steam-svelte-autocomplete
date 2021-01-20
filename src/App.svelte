@@ -7,7 +7,7 @@
 	let result;
 
 	let api_url = "https://damp-brushlands-51855.herokuapp.com"
-	let num_neighbors = "3";
+	let num_neighbors = "12";
 
 	let disabled = false;
 	let showPlacehoder = true
