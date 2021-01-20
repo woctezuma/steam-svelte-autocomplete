@@ -13,6 +13,10 @@
 	let disabled = false;
 	let showPlacehoder = true
 
+	let image_ratio = 1.5
+	let width = 292;
+	let height = width*image_ratio;
+
 	async function searchSimilarApps() {
 		let url = `${proxy_url}${api_url}/similar_apps?index=${gameIndex}&n=${num_neighbors}`;
 		let response = await fetch(url,
@@ -57,7 +61,13 @@
 	{#await result}
 	<p>Loading...</p>
 	{:then value}
-	{value}
+	{#each value as game, i}
+	<a href="{ game.link_url }">
+		<img class="illustration" title="Match n°{i+1}: { game.name }"
+			 alt = "{ game.name }" width="{width}" height="{height}"
+			 src="{ game.steam_illustration_url }">
+		</a>
+	{/each}
 	{:catch error}
 	{error.message}
 	{/await}
