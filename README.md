@@ -15,4 +15,4 @@ npm run dev
 
 [steam-data]: <https://github.com/woctezuma/steam-store-snapshots>
 [svelte-component]: <https://github.com/pstanoev/simple-svelte-autocomplete>
-[svelte-demo]: <http://simple-svelte-autocomplete.surge.sh/
+[svelte-demo]: <http://simple-svelte-autocomplete.surge.sh/>
