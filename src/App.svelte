@@ -6,6 +6,7 @@
 	let gameIndex = "";
 	let result;
 
+	let proxy_url = "http://cors-anywhere.herokuapp.com/"
 	let api_url = "https://damp-brushlands-51855.herokuapp.com"
 	let num_neighbors = "12";
 
@@ -13,11 +14,11 @@
 	let showPlacehoder = true
 
 	async function searchSimilarApps() {
-		let url = `${api_url}/similar_apps?index=${gameIndex}&n=${num_neighbors}`;
+		let url = `${proxy_url}${api_url}/similar_apps?index=${gameIndex}&n=${num_neighbors}`;
 		let response = await fetch(url,
 		{
 			method: 'post',
-			headers: { 'Content-Type': 'application/json' },
+			headers: { 'Origin': 'null'},
 		});
 		let data = await response.json();
 		return data;
