@@ -17,7 +17,7 @@
 		let url = `${proxy_url}${api_url}/similar_apps?index=${gameIndex}&n=${num_neighbors}`;
 		let response = await fetch(url,
 		{
-			method: 'post',
+			method: 'get',
 			headers: { 'Origin': 'null'},
 		});
 		let data = await response.json();
