@@ -31,11 +31,59 @@
     function submitHandler(e) {
         result = searchSimilarApps();
     }
+
+	let search_api_url = "https://arcane-springs-42307.herokuapp.com/find/"
+	let n_search = 10;
+	let selectedGameName;
+	let gameID = "";
+
+	async function searchGameName(keyword) {
+		let search_url = `${proxy_url}${search_api_url}?name=` + encodeURIComponent(keyword) + `&n=${n_search}`;
+		let search_response = await fetch(search_url,
+			{
+				method: 'get',
+				headers: { 'Origin': 'null'},
+			});
+		let search_data = await search_response.json();
+		return search_data;
+	  }
+
+	  async function searchSimilarAppsByID() {
+		let url = `${proxy_url}${api_url}/similar_apps_from_id?id=${gameID}&n=${num_neighbors}`;
+		let response = await fetch(url,
+		{
+			method: 'get',
+			headers: { 'Origin': 'null'},
+		});
+		let data = await response.json();
+		return data;
+	}
+
+    function submitHandlerByID(e) {
+        result = searchSimilarAppsByID();
+	}
+
 </script>
 
 <style>
 
 </style>
+
+<section class="section">
+	<div class="container content">
+
+	<AutoComplete
+	searchFunction={searchGameName}
+	bind:selectedItem={selectedGameName}
+	bind:value={gameID}
+	labelFieldName="name"
+	valueFieldName="id"
+	maxItemsToShowInList="{n_search}" />
+
+	<button on:click|preventDefault={submitHandlerByID}>Submit</button>
+
+</div>
+</section>
 
 <section class="section">
 	<div class="container content">
