@@ -2,7 +2,7 @@
 	import AutoComplete from "./SimpleAutocomplete.svelte";
 	import { gameList } from "./game-list.js";
 
-	let proxy_url = "http://cors-anywhere.herokuapp.com/"
+	let proxy_url = ""
     let api_url = "https://damp-brushlands-51855.herokuapp.com"
     let gameID = "";
 	let num_neighbors = "12";
