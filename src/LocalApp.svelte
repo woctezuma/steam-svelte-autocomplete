@@ -55,7 +55,7 @@
 		  valueFieldName="id"
 		  maxItemsToShowInList="{n_search}"
           {disabled}
-          showClear={false}
+          showClear={true}
           hideArrow={true}
 		  placeholder={showPlacehoder ? 'Please select a game' : ''}
 		/>
