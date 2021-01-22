@@ -20,7 +20,10 @@
 	let result;
 
     function submitHandler(e) {
-        result = searchSimilarAppsByID();
+	 if(gameID)
+		{ result = searchSimilarAppsByID(); }
+	 else
+		{ result = undefined; }
     }
 
     function lookForAnotherAppID(e) {
@@ -54,6 +57,7 @@
           labelFieldName="name"
 		  valueFieldName="id"
 		  maxItemsToShowInList="{n_search}"
+		  onSelectedItemChanged={lookForAnotherAppID(gameID)}
           {disabled}
           showClear={true}
           hideArrow={true}
