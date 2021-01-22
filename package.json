@@ -1,7 +1,10 @@
 {
   "name": "svelte-app",
   "version": "1.0.0",
+  "homepage": "https://woctezuma.github.io/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "npx gh-pages -d public/",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
