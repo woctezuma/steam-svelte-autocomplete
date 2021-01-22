@@ -23,6 +23,11 @@
         result = searchSimilarAppsByID();
     }
 
+    function lookForAnotherAppID(e) {
+		gameID = e;
+        submitHandler();
+    }
+
 	let n_search = 10;
 
     let gameName;
@@ -67,11 +72,10 @@
 	<p>Loading...</p>
 	{:then value}
 	{#each value as game, i}
-	<a href="{ game.link_url }">
 		<img class="illustration" title="Match n°{i+1}: { game.name }"
 			 alt = "{ game.name }" width="{width}" height="{height}"
+			 on:click={lookForAnotherAppID(game.id)}
 			 src="{ game.steam_illustration_url }">
-		</a>
 	{/each}
     {:catch error}
     {error.message}
